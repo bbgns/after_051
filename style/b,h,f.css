@@ -1,0 +1,475 @@
+/*기본설정*/
+@charset "utf-8";
+
+:root {
+    --full_bg_color: #fbfaf4;
+    --main_font_color: #111;
+    --sub_font_color: #5A5A5A;
+    --sub_font_color2: #fff;
+    --sub_font_color3: #929292;
+    --btn_border: #CACACA;
+}
+
+* {
+    cursor: url(/images/Group\ 3645.png) 12 12, auto;
+}
+
+a,
+a * {
+    cursor: pointer;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+video,
+iframe {
+    display: block;
+}
+
+button {
+    border: 0;
+    background: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+/*basic_setting*/
+
+/* HEADER */
+
+/* HEADER */
+
+#header {
+    font-family: "EB Garamond", "Noto Sans KR", sans-serif;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #111;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.header_inner {
+    height: 100%;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.logo {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo img {
+    width: 120px;
+    display: block;
+}
+
+/* gnb */
+.gnb>ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav_item>a {
+    position: relative;
+
+    min-width: 90px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+
+    transition:
+        letter-spacing 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.nav_item>a:hover {
+    letter-spacing: 0.04em;
+    opacity: 0.75;
+}
+
+.nav_item>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+
+    width: 0;
+    height: 1px;
+    background: #111;
+
+    transition: width 0.3s ease;
+}
+
+.nav_item:hover>a::after {
+    width: 100%;
+}
+
+
+/*SHOP MEGA MENU*/
+
+.shop_mega {
+    position: fixed;
+    left: 0;
+    top: 60px;
+
+    width: 100%;
+    padding: 28px 0 34px;
+
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+
+    transition: 0.35s ease;
+}
+
+.shop_item:hover .shop_mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.shop_mega_inner {
+    width: min(100% - 80px, 980px);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.mega_card {
+    width: 132px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.mega_card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    display: block;
+    background: #f7f7f7;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.mega_card span {
+    display: block;
+    padding-top: 14px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #111;
+}
+
+.mega_card:hover img {
+    transform: scale(1.035);
+    opacity: 0.85;
+}
+
+/* =========================
+    RIGHT ICONS
+========================= */
+
+.header_icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header_icons a {
+    position: relative;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+.header_icons img {
+    width: 26px;
+    height: 26px;
+
+    display: block;
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.header_icons a:hover img {
+    transform: translateY(-2px);
+    opacity: 0.6;
+}
+
+
+
+/*꽃 svg 애니메이션*/
+
+.flower {
+    width: 30px;
+    height: 30px;
+}
+
+.flower:hover {
+    animation: spin 3s linear infinite;
+}
+
+.flower.stop {
+    animation: none;
+}
+
+.flower_white:hover {
+    animation: spin 3s linear infinite;
+}
+
+.flower_white.stop {
+    animation: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 아스키 배너 */
+#ascii_banner {
+    padding: 70px 40px;
+    text-align: center;
+}
+
+#ascii_banner img {
+    display: block;
+    width: 60%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+
+/* TOP BUTTON */
+
+.top_btn {
+    position: fixed;
+    right: 34px;
+    bottom: 34px;
+    z-index: 999;
+
+    width: 70px;
+    height: 70px;
+    border: 1px solid #111;
+    border-radius: 50%;
+
+    background-color: #fbfaf4;
+    color: #111;
+
+    font-family: "EB Garamond", serif;
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+
+    transition: opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.top_btn.is_show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.top_btn:hover {
+    background-color: #111;
+    color: #fbfaf4;
+}
+
+/*푸터*/
+#footer {
+    background-color: #fff;
+    padding: 40px 30px;
+
+}
+
+#footer .footer_inner {
+    position: relative;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border-top: 1px solid #111;
+    overflow: hidden;
+}
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.footer_brand {
+    width: 35%;
+}
+
+.footer_logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 28px;
+    color: #111;
+}
+
+.footer_brand p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #111;
+}
+
+.footer_menu_wrap {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer_menu h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--main_font_color);
+}
+
+.footer_menu ul {
+    list-style: none;
+}
+
+.footer_menu li+li {
+    margin-top: 5px;
+}
+
+.footer_menu a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #111;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer_menu a:hover {
+    color: #777;
+    transform: translateX(4px);
+}
+
+.footer_bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
+
+.footer_bottom p,
+.footer_policy a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #111;
+    text-decoration: none;
+}
+
+.footer_policy {
+    display: flex;
+    gap: 60px;
+}
+
+.footer_policy a:hover {
+    color: #777;
+}
+
+.footer_flower {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+
+    z-index: 1;
+    pointer-events: none;
+}

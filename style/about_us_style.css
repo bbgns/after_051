@@ -1,0 +1,90 @@
+/* =========================
+    ABOUT STORY
+========================= */
+
+#about_story {
+    position: relative;
+    background-color: #f4f0ea;
+}
+
+.about_pin {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* 왼쪽 텍스트 */
+.about_text {
+    width: 45%;
+    height: 100%;
+    padding: 180px 70px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #111;
+}
+
+.about_count {
+    margin-bottom: 30px;
+    font-family: "EB Garamond", serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: #777;
+}
+
+.about_text h2 {
+    margin-bottom: 36px;
+    font-family: "EB Garamond", serif;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+}
+
+.about_desc {
+    max-width: 520px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: #333;
+    word-break: keep-all;
+}
+
+/* 오른쪽 이미지 */
+.about_visual {
+    width: 55%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.visual_track {
+    width: 100%;
+    height: 100%;
+}
+
+.visual_slide {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.visual_slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* 텍스트 바뀔 때 살짝 부드럽게 */
+.about_text.is-changing {
+    opacity: 0.35;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.about_text {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}

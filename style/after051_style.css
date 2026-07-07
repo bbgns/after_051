@@ -1,0 +1,1763 @@
+/*기본설정*/
+@charset "utf-8";
+
+:root {
+    --full_bg_color: #f6f0e6;
+    --main_font_color: #111;
+    --sub_font_color: #5A5A5A;
+    --sub_font_color2: #fff;
+    --sub_font_color3: #929292;
+    --btn_border: #CACACA;
+    --btn_bg: #FAF8F0;
+    --btn_bg_hover: #EDEAE0;
+}
+
+* {
+    cursor: url(/images/Group\ 3645.png) 12 12, auto;
+}
+
+a,
+a * {
+    cursor: pointer;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+video,
+iframe {
+    display: block;
+}
+
+button {
+    border: 0;
+    background: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+body {
+    background-color: #FAF8F0;
+}
+
+/*basic_setting*/
+
+/*헤더*/
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+    transition: background-color 0.3s ease;
+}
+
+#header:hover {
+    background: var(--full_bg_color);
+}
+
+.header_inner {
+    width: 100%;
+    height: 35px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.logo {
+    justify-self: start;
+    margin: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gnb {
+    justify-self: center;
+}
+
+.gnb ul,
+.util {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.util {
+    justify-self: end;
+}
+
+.gnb a,
+.util a {
+    font-family: "EB Garamond", serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--main_font_color);
+}
+
+.util .menu_btn {
+    font-family: "EB Garamond", serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+/*header*/
+
+/*header menu*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 300;
+    background: transparent;
+    transition: background-color 0.3s ease;
+}
+
+#header.active {
+    background-color: var(--full_bg_color);
+}
+
+.menu_dim {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        background-color 0.45s ease,
+        backdrop-filter 0.45s ease,
+        opacity 0.45s ease;
+}
+
+body.menu_open .menu_dim {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 내려오는 메뉴 */
+.menu_overlay {
+    position: fixed;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    z-index: 250;
+    background: var(--full_bg_color);
+    border-top: 1px solid var(--sub_font_color3);
+    transform: translateY(-110%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        transform 0.6s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.35s ease;
+}
+
+body.menu_open .menu_overlay {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 메뉴 열렸을 때 헤더 배경 고정 */
+body.menu_open #header {
+    background: var(--full_bg_color);
+}
+
+/* 메뉴 열렸을 때 menu 버튼 색도 맞추기 */
+body.menu_open .menu_btn {
+    color: var(--main_font_color);
+}
+
+.menu_inner {
+    height: 100%;
+    padding: 40px 50px;
+    display: grid;
+    grid-template-columns: 160px 160px 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.menu_close {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+    border: 0;
+    background: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--main_font_color);
+}
+
+.menu_left ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu_left,
+.menu_left2 {
+    padding-left: 50px;
+}
+
+.menu_left a,
+.menu_left2 a {
+    color: var(--sub_font_color3);
+    transition: color 0.25s ease;
+}
+
+.menu_left a:hover,
+.menu_left2 a:hover {
+    color: #111;
+}
+
+.menu_left a {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 600;
+}
+
+.menu_left2 a {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    line-height: 2.5;
+    font-weight: 600;
+}
+
+.menu_product1 img,
+.menu_product2 img {
+    width: 75%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu_product1 p,
+.menu_product2 p {
+    margin-top: 8px;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+/* 버튼 색상 빠지는 거 방지 */
+.util .menu_btn {
+    color: var(--main_font_color);
+}
+
+/*header menu*/
+
+/*cart menu*/
+.cart_overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 998;
+}
+
+.cart_overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart_drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    max-width: 90vw;
+    height: 100vh;
+    background: #fbfaf4;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    padding: 18px 18px 24px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cart_drawer.active {
+    transform: translateX(0);
+}
+
+.cart_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 10px;
+}
+
+.cart_header h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cart_close {
+    border: 0;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cart_empty {
+    flex: 1;
+    position: relative;
+    padding-top: 18px;
+}
+
+.cart_empty p {
+    font-size: 14px;
+}
+
+.cart_flower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 상품 있을 때 */
+.cart_content {
+    padding-top: 16px;
+    flex: 1;
+    display: none;
+}
+
+.cart_item {
+    display: flex;
+    gap: 12px;
+    position: relative;
+}
+
+.cart_img {
+    width: 120px;
+    height: 120px;
+    background: #d7d7d7;
+    flex-shrink: 0;
+}
+
+.cart_info {
+    font-size: 13px;
+}
+
+.cart_name {
+    margin-bottom: 6px;
+}
+
+.cart_price {
+    margin-bottom: 46px;
+}
+
+.cart_option {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #777;
+}
+
+.cart_option button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.cart_delete {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    background: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.cart_bottom {
+    display: none;
+    border-top: 1px solid #ccc;
+    padding-top: 12px;
+}
+
+.cart_total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.cart_buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.cart_buttons button {
+    width: 50%;
+    height: 36px;
+    background: transparent;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.cart_notice {
+    text-align: center;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+
+/*main_banner*/
+#main_banner .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+#main_banner .swiper-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 35%,
+            rgba(0, 0, 0, 0.15) 65%,
+            rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.mb_next,
+.mb_prev {
+    color: #fff;
+}
+
+.mb_collection_title {
+    font-size: 50px;
+    letter-spacing: 0.04em;
+    font-family: "EB Garamond", serif;
+}
+
+.mb_title_wrap {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mb_title_wrap .bigger {
+    font-family: "EB Garamond", serif;
+    font-size: 100px;
+    letter-spacing: 0.04em;
+}
+
+.mb_slide_desc .emoji {
+    font-size: 30px;
+}
+
+.mb_text .gotobtn {
+    display: block;
+    padding-top: 30px;
+    font-family: "EB Garamond", serif;
+    font-size: 25px;
+    letter-spacing: 0.04em;
+}
+
+/* main banner size */
+#main_banner {
+    width: 100%;
+    height: 100vh;
+}
+
+#main_banner .mainbanner,
+#main_banner .swiper-wrapper,
+#main_banner .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+/* main banner slide */
+#main_banner .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+/* background image + video */
+#main_banner .swiper-slide>img,
+#main_banner .mb_video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 메인배너 이미지 */
+.video_slide .mb_bg {
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
+/* 메인배너 비디오 */
+.video_slide .mb_video {
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+}
+
+/* 메인배너 호버 */
+.video_slide:hover .mb_bg {
+    opacity: 0;
+}
+
+.video_slide:hover .mb_video {
+    opacity: 1;
+}
+
+/* 메인배너 텍스트 위치 */
+.mb_text {
+    position: absolute;
+    left: 220px;
+    top: 270px;
+    color: #fff;
+    z-index: 5;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* swiper arrows above everything */
+.mb_next,
+.mb_prev {
+    color: #fff;
+    z-index: 10;
+}
+
+/*main_banner*/
+
+
+/*배스콜렉션*/
+#bath_collection .collection_inner {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+#bath_collection .collection_title_wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#bath_collection .collection_title {
+    font-family: "EB Garamond", serif;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+#bath_collection .collection_sub_title {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--main_font_color);
+    padding: 20px 0;
+}
+
+#bath_collection .collection_title_wrap .flower {
+    width: 30px;
+    height: 30px;
+}
+
+#bath_collection .collection_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.collection_item {
+    width: auto;
+}
+
+#bath_collection .product_img {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+#bath_collection .product_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 기본 이미지 */
+#bath_collection .product_img .main_img {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* 호버 이미지 */
+#bath_collection .product_img .hover_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* 사진에 호버했을 때 이미지 변경 */
+#bath_collection .product_img:hover .main_img {
+    opacity: 0;
+}
+
+#bath_collection .product_img:hover .hover_img {
+    opacity: 1;
+}
+
+.collection_item .item_info .product_name {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.collection_item .item_info .sub_name {
+    color: var(--sub_font_color3);
+    font-size: 13px;
+}
+
+.collection_item .item_info .product_price {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+/* 메인에 있는 모든 add to bag */
+.product_btn_wrap {
+    margin-top: 22px;
+}
+
+.product_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 42px;
+
+    border: 1px solid var(--btn_border);
+    color: var(--main_font_color);
+    font-size: 15px;
+    transition: 0.6s ease;
+}
+
+.product_btn:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* 메인에 있는 모든 add to bag */
+
+/* 상품 옵션 */
+#bath_collection .product_option {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 36px;
+}
+
+#bath_collection .option_swatch {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background-color: var(--swatch-color);
+    cursor: pointer;
+    position: relative;
+}
+
+/* 선택된 옵션 */
+#bath_collection .option_swatch.active {
+    outline: 1px solid #111;
+    outline-offset: -1px;
+    z-index: 2;
+}
+
+/* 호버했을 때 */
+#bath_collection .option_swatch:hover {
+    outline: 1px solid #111;
+    outline-offset: -1px;
+    z-index: 3;
+}
+
+
+/*꽃 svg 애니메이션*/
+.flower:hover {
+    animation: spin 3s linear infinite;
+}
+
+.flower.stop {
+    animation: none;
+}
+
+.flower_white:hover {
+    animation: spin 3s linear infinite;
+}
+
+.flower_white.stop {
+    animation: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* choose your tide */
+
+#choose_tide .tide_inner {
+    padding: 80px 40px;
+    width: 1680px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 72px;
+    align-items: center;
+}
+
+/* left */
+.tide_content {
+    min-width: 0;
+}
+
+.tide_head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.tide_head p {
+    font-size: 15px;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.tide_title_wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.tide_title_wrap h2 {
+    font-family: "EB Garamond", serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+}
+
+/* top tide buttons */
+.tide_btns {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.tide_btn {
+    width: 92px;
+    height: 32px;
+    background-color: var(--btn_bg);
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.tide_btn:hover,
+.tide_btn.active {
+    background-color: var(--btn_bg_hover);
+    border-right: none;
+    border-bottom: none;
+}
+
+.tide_line {
+    width: 100%;
+    height: 1px;
+    background: rgba(20, 20, 20, 0.62);
+    margin-bottom: 30px;
+}
+
+/* tide info */
+.tide_info {
+    margin-bottom: 40px;
+}
+
+#tideName {
+    padding-bottom: 10px;
+}
+
+#tideKo {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#tideEn {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#tideDesc {
+    font-size: 15px;
+}
+
+/* hair / body tabs */
+.care_tabs {
+    display: flex;
+    justify-content: center;
+    gap: 210px;
+    margin-bottom: 32px;
+}
+
+.care_tab {
+    position: relative;
+    border: 0;
+    background: transparent;
+    font-family: "EB Garamond", serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(20, 20, 20, 0.22);
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.care_tab::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #111;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.care_tab.active {
+    color: #111;
+}
+
+.care_tab.active::after {
+    width: 100%;
+}
+
+/* product */
+.product_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.product_item a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.product_img {
+    aspect-ratio: 1 / 1.2;
+    overflow: hidden;
+    background: #eeeae1;
+    margin-bottom: 13px;
+}
+
+.product_img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product_item:hover img {
+    transform: scale(1.04);
+}
+
+.product_item p {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+/* right image */
+.tide_visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.18 / 1;
+    overflow: hidden;
+}
+
+.tide_visual img,
+.tide_visual video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tide_visual img {
+    z-index: 1;
+    transition: opacity 0.45s ease, transform 1.2s ease;
+}
+
+.tide_visual video {
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.tide_visual:hover img {
+    opacity: 0;
+    transform: scale(1.025);
+}
+
+.tide_visual:hover video {
+    opacity: 1;
+}
+
+/* responsive */
+@media (max-width: 1280px) {
+    #choose_tide .tide_inner {
+        width: calc(100% - 72px);
+        grid-template-columns: 1fr;
+        gap: 54px;
+    }
+
+    .tide_visual {
+        aspect-ratio: 1.65 / 1;
+    }
+
+    .care_tabs {
+        gap: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    #choose_tide {
+        padding: 64px 0;
+    }
+
+    #choose_tide .tide_inner {
+        width: calc(100% - 36px);
+    }
+
+    .tide_head {
+        display: block;
+    }
+
+    .tide_title_wrap {
+        margin-bottom: 20px;
+    }
+
+    .tide_head p {
+        padding-top: 0;
+        font-size: 13px;
+    }
+
+    .tide_btns {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tide_btn {
+        width: calc(50% - 4px);
+    }
+
+    .care_tabs {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .product_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tide_visual {
+        aspect-ratio: 1.2 / 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .product_list {
+        grid-template-columns: 1fr;
+    }
+
+    .product_img {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+
+/*프래그런스 에세이*/
+
+#fragrance_essay .essay_inner {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 90px 60px;
+}
+
+#fragrance_essay .essay_slide {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 90px;
+    align-items: stretch;
+}
+
+/* swiper */
+#fragrance_essay .essay_swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 한 슬라이드 안에 텍스트 + 이미지 같이 넣기 */
+#fragrance_essay .essay_slide {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 80px;
+    align-items: stretch;
+}
+
+/* 텍스트 영역 */
+#fragrance_essay .essay_text {
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+#fragrance_essay .essay_text h2 {
+    font-family: "EB Garamond", serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--main_font_color);
+    margin-bottom: 50px;
+    letter-spacing: 0.04em;
+}
+
+#fragrance_essay .essay_desc {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #111;
+    margin-bottom: 50px;
+}
+
+#fragrance_essay .essay_story {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--sub_font_color3);
+    margin-bottom: 35px;
+}
+
+/* 이야기 보러가기 버튼 */
+#fragrance_essay .essay_btn {
+    width: 150px;
+    height: 42px;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+#fragrance_essay .essay_btn:hover {
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* 이미지 영역 */
+#fragrance_essay .essay_img {
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+}
+
+#fragrance_essay .essay_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 버튼 영역 */
+#fragrance_essay .essay_controls {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+#fragrance_essay .essay_prev,
+#fragrance_essay .essay_next {
+    width: 34px;
+    height: 34px;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #111;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+
+#fragrance_essay .essay_prev:hover,
+#fragrance_essay .essay_next:hover {
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-right: none;
+    border-bottom: none;
+}
+
+#fragrance_essay .essay_pagination {
+    width: auto;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #111;
+}
+
+/*프래그런스 에세이*/
+
+
+/*프래그런스 콜렉션*/
+#fragrance_collection .collection_inner {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+#fragrance_collection .collection_title_wrap {
+    font-family: "EB Garamond", serif;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#fragrance_collection .collection_sub_title {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--main_font_color);
+    padding: 20px 0;
+}
+
+
+#fragrance_collection .collection_title_wrap .flower {
+    width: 30px;
+    height: 30px;
+}
+
+#fragrance_collection .collection_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.collection_item {
+    width: auto;
+}
+
+#fragrance_collection .product_img {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+#fragrance_collection .product_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 기본 이미지 */
+#fragrance_collection .product_img .main_img {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* 호버 이미지 */
+#fragrance_collection .product_img .hover_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* 사진에 호버했을 때 이미지 변경 */
+#fragrance_collection .product_img:hover .main_img {
+    opacity: 0;
+}
+
+#fragrance_collection .product_img:hover .hover_img {
+    opacity: 1;
+}
+
+.collection_item .item_info .product_name {
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.collection_item .item_info .sub_name {
+    color: var(--sub_font_color3);
+    font-size: 13px;
+}
+
+.collection_item .item_info .product_price {
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+
+/* gift set */
+
+.gift_inner {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+/* title */
+.gift_head {
+    margin-bottom: 30px;
+}
+
+.gift_title_wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+}
+
+.gift_title_wrap .flower {
+    width: 30px;
+    height: 30px;
+}
+
+.gift_title_wrap .gift_title {
+    font-family: "EB Garamond", serif;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding-bottom: 20px;
+}
+
+.gift_sub_title {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--main_font_color);
+    line-height: 2;
+}
+
+.flower {
+    width: 30px;
+    height: 30px;
+}
+
+/* layout */
+.gift_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* common */
+.gift_grid a {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.gift_big,
+.gift_item {
+    border: 1px solid rgba(20, 20, 20, 0.14);
+    background: #f8f7f1;
+    overflow: hidden;
+}
+
+/* left big */
+.gift_big a {
+    display: grid;
+    grid-template-rows: 2fr 1.03fr;
+}
+
+.gift_big_img {
+    overflow: hidden;
+}
+
+.gift_big_img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* left text box */
+.gift_big_text {
+    padding: 24px 76px 42px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.gift_big_text .gift_item_name {
+    font-family: "EB Garamond", serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    padding-bottom: 30px;
+}
+
+.gift_big_text .gift_big_desc {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+}
+
+/* right list */
+.gift_list {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.gift_item a {
+    display: grid;
+    grid-template-columns: 1.36fr 1fr;
+}
+
+.gift_item_img {
+    overflow: hidden;
+}
+
+.gift_item_img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* right text box */
+.gift_item_text {
+    padding: 34px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid rgba(20, 20, 20, 0.08);
+}
+
+.gift_item_text .gift_left_title {
+    font-family: "EB Garamond", serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+}
+
+.gift_item_text p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+
+/* hover - 아주 은은하게 */
+.gift_big img,
+.gift_item img {
+    transition: transform 0.7s ease;
+}
+
+.gift_big:hover img,
+.gift_item:hover img {
+    transform: scale(1.035);
+}
+
+.gift_shop_btn {
+    font-family: 'EB Garamond', serif;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 44px;
+    margin-top: 34px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.38);
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--sub_font_color);
+}
+
+.gift_shop_btn span {
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.gift_big:hover .gift_shop_btn span,
+.gift_item:hover .gift_shop_btn span {
+    transform: translateX(5px);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+    .gift_inner {
+        width: calc(100% - 48px);
+    }
+
+    .gift_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gift_head {
+        margin-bottom: 48px;
+    }
+
+    .gift_item a {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .gift_item_img {
+        aspect-ratio: 1.45 / 1;
+    }
+}
+
+@media (max-width: 640px) {
+    #gift_set {
+        padding: 28px 0 60px;
+    }
+
+    .gift_inner {
+        width: calc(100% - 32px);
+    }
+
+    .gift_title_wrap h2 {
+        font-size: 36px;
+    }
+
+    .gift_head {
+        margin-bottom: 36px;
+    }
+
+    .gift_big a {
+        grid-template-rows: auto auto;
+    }
+
+    .gift_big_img {
+        aspect-ratio: 1.18 / 1;
+    }
+
+    .gift_big_text {
+        padding: 24px 24px 34px;
+        align-items: flex-start;
+    }
+
+    .gift_big_text h3 {
+        margin-bottom: 42px;
+    }
+
+    .gift_item a {
+        grid-template-columns: 1fr;
+    }
+
+    .gift_item_text {
+        border-left: 0;
+        border-top: 1px solid rgba(20, 20, 20, 0.08);
+        padding: 24px;
+    }
+}
+
+/*브랜드 + 스토어 + 리필 배너*/
+
+#link_banner .link_inner {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 100px 0 100px;
+}
+
+.link_card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+}
+
+.link_card_large {
+    height: 280px;
+    margin-bottom: 22px;
+}
+
+.link_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.link_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.link_dim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    transition: background-color 0.4s ease;
+}
+
+.link_text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.link_text p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.link_text h3 {
+    margin-top: 4px;
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.link_card:hover img {
+    transform: scale(1.04);
+}
+
+.link_card:hover .link_dim {
+    background: rgba(0, 0, 0, 0.48);
+}
+
+/*아스키 배너*/
+#ascii_banner img {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+/*푸터*/
+#footer {
+    background-color: #fff;
+    padding: 40px 30px;
+
+}
+
+#footer .footer_inner {
+    position: relative;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border-top: 1px solid #111;
+    overflow: hidden;
+}
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.footer_brand {
+    width: 35%;
+}
+
+.footer_logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 28px;
+    color: #111;
+}
+
+.footer_brand p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #111;
+}
+
+.footer_menu_wrap {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer_menu h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--main_font_color);
+}
+
+.footer_menu ul {
+    list-style: none;
+}
+
+.footer_menu li+li {
+    margin-top: 5px;
+}
+
+.footer_menu a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #111;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer_menu a:hover {
+    color: #777;
+    transform: translateX(4px);
+}
+
+.footer_bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
+
+.footer_bottom p,
+.footer_policy a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #111;
+    text-decoration: none;
+}
+
+.footer_policy {
+    display: flex;
+    gap: 60px;
+}
+
+.footer_policy a:hover {
+    color: #777;
+}
+
+.footer_flower {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+
+    z-index: 1;
+    pointer-events: none;
+}

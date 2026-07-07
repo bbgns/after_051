@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>after 051 애프터 051</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!--스타일-->
+    <link rel="stylesheet" href="./style/b,h,f.css">
+    <link rel="stylesheet" href="./style/products_list.css">
+
+    <!--파비콘-->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!--헤더-->
+    <header id="header">
+        <div class="header_inner">
+
+            <div class="header_left">
+                <h1 class="logo">
+                    <a href="./index.html">
+                        <img src="./images/logo3.svg" alt="after 051">
+                    </a>
+                </h1>
+
+                <nav class="gnb">
+                    <ul>
+                        <li class="nav_item shop_item">
+                            <a href="./shop.html">shop</a>
+
+                            <div class="shop_mega">
+                                <div class="shop_mega_inner">
+                                    <a href="./shop.html" class="mega_card">
+                                        <img src="./images/menu_all_product.jpeg" alt="">
+                                        <span>shop all</span>
+                                    </a>
+
+                                    <a href="./hair.html" class="mega_card">
+                                        <img src="./images/menu_hair_product.jpeg" alt="">
+                                        <span>hair</span>
+                                    </a>
+
+                                    <a href="./body.html" class="mega_card">
+                                        <img src="./images/menu_body_product.jpeg" alt="">
+                                        <span>body</span>
+                                    </a>
+
+                                    <a href="./bath.html" class="mega_card">
+                                        <img src="./images/menu_bath_product.jpeg" alt="">
+                                        <span>bath</span>
+                                    </a>
+
+                                    <a href="./fragrance.html" class="mega_card">
+                                        <img src="./images/menu_fragrance_product.jpeg" alt="">
+                                        <span>fragrance</span>
+                                    </a>
+
+                                    <a href="./gift.html" class="mega_card">
+                                        <img src="./images/menu_gift_product.jpeg" alt="">
+                                        <span>gift</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav_item"><a href="./brand.html">brand</a></li>
+                        <li class="nav_item"><a href="./mood-note.html">mood note</a></li>
+                        <li class="nav_item"><a href="./store.html">store</a></li>
+                        <li class="nav_item"><a href="./community.html">community</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <ul class="header_icons">
+                <li>
+                    <a href="./search.html" aria-label="search">
+                        <img src="./images/material-symbols-light_search.svg" alt="">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./login.html" aria-label="account">
+                        <img src="./images/mdi-light_account.svg" alt="">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="cart_icon" aria-label="cart">
+                        <img src="./images/mdi-light_cart.svg" alt="">
+                        <span class="cart_count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!--제품페이지-->
+    <main id="products_page">
+        <div class="product_category_tabs">
+            <button type="button" class="category_tab is_active" data-category="all">전체 상품</button>
+            <button type="button" class="category_tab" data-category="best">베스트 상품</button>
+            <button type="button" class="category_tab" data-category="hair">헤어</button>
+            <button type="button" class="category_tab" data-category="body">바디</button>
+            <button type="button" class="category_tab" data-category="bath">배스</button>
+            <button type="button" class="category_tab" data-category="fragrance">프래그런스</button>
+            <button type="button" class="category_tab" data-category="gift">기프트</button>
+        </div>
+        <!--best sellers-->
+        <section id="best_sellers" class="product_section" data-category="best">
+            <div class="section_title">
+                <h3>best sellers</h3>
+                <img src="./images/flower.svg" alt="" class="flower">
+                <div class="title_line"></div>
+            </div>
+
+            <div class="product_grid">
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_shampoo.jpg" alt="해무 샴푸">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 모이스처 밸런싱 샴푸</p>
+                        <p class="product_en">Moisture Balancing Shampoo · 500ml</p>
+                        <p class="product_price">34,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/products_haemu_bathmilk.jpg" alt="해무 배스밀크">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 미스티 배스밀크</p>
+                        <p class="product_en">Haemu Misty Bath Milk · 300ml</p>
+                        <p class="product_price">38,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- hair care -->
+        <section id="hair_care" class="product_section" data-category="hair">
+            <div class="section_title">
+                <h3>hair care</h3>
+                <img src="./images/flower.svg" alt="" class="flower">
+                <div class="title_line"></div>
+            </div>
+
+            <div class="section_banner">
+                <img src="./images/product_banner_hair.png" alt="hair care banner">
+            </div>
+
+            <div class="filter_area">
+                <p class="filter_label">라인 별</p>
+                <ul class="filter_chips">
+                    <li><button type="button">해무</button></li>
+                    <li><button type="button">윤슬</button></li>
+                    <li><button type="button">황혼</button></li>
+                    <li><button type="button">심해</button></li>
+                </ul>
+
+                <p class="filter_desc">
+                    해무 ㅣ 모발과 두피를 위한 순한 데일리 헤어 루틴
+                </p>
+            </div>
+
+            <div class="product_layout product_layout_hair">
+                <article class="visual_card">
+                    <img src="./images/product_image_hair.png" alt="hair ritual image">
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_shampoo.jpg" alt="해무 샴푸">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 모이스처 밸런싱 샴푸</p>
+                        <p class="product_en">Moisture Balancing Shampoo · 500ml</p>
+                        <p class="product_price">34,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_hair_mask.jpg" alt="해무 트리트먼트">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 너리싱 트리트먼트</p>
+                        <p class="product_en">Nourishing Treatment · 300ml</p>
+                        <p class="product_price">32,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_hair_serum.jpg" alt="해무 헤어 세럼">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 헤어 세럼</p>
+                        <p class="product_en">Hair Serum · 100ml</p>
+                        <p class="product_price">31,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- body care -->
+        <section id="body_care" class="product_section" data-category="body">
+            <div class="section_title section_title_right">
+                <h3>body care</h3>
+                <img src="./images/flower.svg" alt="" class="flower">
+                <div class="title_line"></div>
+            </div>
+
+            <div class="section_banner">
+                <img src="./images/product_banner_body.png" alt="body care banner">
+            </div>
+
+            <div class="filter_area">
+                <p class="filter_label">라인 별</p>
+                <ul class="filter_chips">
+                    <li><button type="button">해무</button></li>
+                    <li><button type="button">윤슬</button></li>
+                    <li><button type="button">황혼</button></li>
+                    <li><button type="button">심해</button></li>
+                </ul>
+
+                <p class="filter_desc">
+                    해무 ㅣ 차분하고 포근하게 씻겨 내려가는 바디 케어
+                </p>
+            </div>
+
+            <div class="product_layout product_layout_body">
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_body_wash.jpg" alt="해무 바디워시">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 포밍 바디워시</p>
+                        <p class="product_en">Foaming Body Wash · 500ml</p>
+                        <p class="product_price">28,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_body_lotion.jpg" alt="해무 바디로션">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 바디로션</p>
+                        <p class="product_en">Body Lotion · 300ml</p>
+                        <p class="product_price">32,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_body_bar.jpeg" alt="해무 바디 바">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 바디 바</p>
+                        <p class="product_en">Cleansing Body Bar · 120g</p>
+                        <p class="product_price">18,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="visual_card visual_card_tall">
+                    <img src="./images/product_image_body.jpeg" alt="body ritual image">
+                </article>
+            </div>
+        </section>
+
+        <!-- bath care -->
+        <section id="bath_care" class="product_section" data-category="bath">
+            <div class="section_title">
+                <h3>bath care</h3>
+                <img src="./images/flower.svg" alt="" class="flower">
+                <div class="title_line"></div>
+            </div>
+
+            <div class="section_banner">
+                <img src="./images/product_banner_bath.png" alt="bath care banner">
+            </div>
+
+            <div class="filter_area">
+                <p class="filter_label">라인 별</p>
+                <ul class="filter_chips">
+                    <li><button type="button">해무</button></li>
+                    <li><button type="button">윤슬</button></li>
+                    <li><button type="button">황혼</button></li>
+                    <li><button type="button">심해</button></li>
+                </ul>
+
+                <p class="filter_desc">
+                    해무 ㅣ 우윳빛 목욕물로 완성하는 포근한 배스 리추얼
+                </p>
+            </div>
+
+            <div class="product_layout product_layout_bath">
+                <article class="visual_card visual_card_wide">
+                    <img src="./images/product_image_bath.png" alt="bath milk ritual image">
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/products_haemu_bathmilk.jpg" alt="해무 배스밀크">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 미스티 배스밀크</p>
+                        <p class="product_en">Haemu Misty Bath Milk · 300ml</p>
+                        <p class="product_price">38,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/haemu_bath_teabag.jpeg" alt="해무 배스 티">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 배스 티백</p>
+                        <p class="product_en">Haemu Bath Tea · 3ea</p>
+                        <p class="product_price">28,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- fragrance -->
+        <section id="fragrance" class="product_section" data-category="fragrance">
+            <div class="section_title section_title_right">
+                <h3>fragrance</h3>
+                <img src="./images/flower.svg" alt="" class="flower">
+                <div class="title_line"></div>
+            </div>
+
+            <div class="section_banner">
+                <img src="./images/product_banner_fragrance.png" alt="fragrance banner">
+            </div>
+
+            <div class="filter_area">
+                <p class="filter_label">라인 별</p>
+                <ul class="filter_chips">
+                    <li><button type="button">해무</button></li>
+                    <li><button type="button">윤슬</button></li>
+                    <li><button type="button">황혼</button></li>
+                    <li><button type="button">심해</button></li>
+                </ul>
+
+                <p class="filter_desc">
+                    해무 ㅣ 안개 낀 새벽 바다처럼, 코코넛 밀크와 동백, 화이트 머스크가 부드럽게 머무는 향
+                </p>
+            </div>
+
+            <div class="product_layout product_layout_fragrance">
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/product_haemu_fragrance.jpg" alt="해무 오 드 뚜왈렛">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 오 드 뚜왈렛</p>
+                        <p class="product_en">Haemu Eau de Toilette · 50ml</p>
+                        <p class="product_price">52,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="visual_card visual_card_wide">
+                    <img src="./images/product_image_fragrance.png" alt="fragrance ritual image">
+                </article>
+            </div>
+            <div class="filter_area">
+                <p class="filter_label">라인 별</p>
+                <ul class="filter_chips">
+                    <li><button type="button">해무</button></li>
+                    <li><button type="button">심해</button></li>
+                </ul>
+
+                <p class="filter_desc">
+                    해무 ㅣ 안개 낀 새벽 바다처럼, 코코넛 밀크와 동백, 화이트 머스크가 침구와 패브릭 위에 포근하게 내려앉는 향
+                </p>
+            </div>
+
+            <div class="product_layout product_layout_fragrance">
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/product_haemu_fabric_spray.jpg" alt="해무 모닝 미스트 스프레이">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">해무 모닝 미스트 패브릭 스프레이</p>
+                        <p class="product_en">Haemu morning mist fabric spray · 50ml</p>
+                        <p class="product_price">22,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="visual_card visual_card_wide">
+                    <img src="./images/product_image_fabricspray.jpeg" alt="fragrance ritual image">
+                </article>
+            </div>
+        </section>
+
+        <!-- gift set -->
+        <section id="gift_set" class="product_section" data-category="gift">
+            <div class="section_title">
+                <h3>gift set</h3>
+                <img src="./images/flower.svg" alt="" class="flower">
+                <div class="title_line"></div>
+            </div>
+
+            <div class="section_banner">
+                <img src="./images/product_banner_gift.png" alt="gift set banner">
+            </div>
+
+            <div class="gift_intro">
+                <p class="gift_desc">
+                    부산 바다의 무드를 담은 헤어, 바디, 배스, 프래그런스 리추얼을
+                    소중한 사람에게 전할 수 있도록 구성한 선물 세트.
+                </p>
+            </div>
+
+            <div class="product_layout product_layout_gift">
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/gift_hair_body.jpeg" alt="헤어 앤 바디 리추얼 세트">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">헤어 앤 바디 리추얼 세트</p>
+                        <p class="product_en">Hair & Body Ritual Gift Set</p>
+                        <p class="product_price">86,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/gift_bath.jpeg" alt="배스 리추얼 세트">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">배스 리추얼 세트</p>
+                        <p class="product_en">Bath Ritual Gift Set</p>
+                        <p class="product_price">58,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/gift_perfume_discovery.jpeg" alt="퍼퓸 디스커버리 세트">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">퍼퓸 디스커버리 세트</p>
+                        <p class="product_en">Perfume Discovery Kit</p>
+                        <p class="product_price">39,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+
+                <article class="product_card">
+                    <a href="#" class="product_img">
+                        <img src="./images/gift_perfume_set.jpeg" alt="퍼퓸 리추얼 세트">
+                    </a>
+                    <div class="product_info">
+                        <p class="product_name">오 드 뚜왈렛 기프트 세트</p>
+                        <p class="product_en">Fabric Ritual Gift Set</p>
+                        <p class="product_price">60,000원</p>
+                    </div>
+                    <div class="product_btns">
+                        <a href="#">add to bag</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!--아스키코드배너-->
+    <section id="ascii_banner">
+        <img src="./images/ascii_logo.png" alt="">
+    </section>
+
+    <!-- footer 위나 아래, body 닫히기 전에 넣기 -->
+    <button type="button" class="top_btn" aria-label="맨 위로 이동">
+        top
+    </button>
+
+    <!--푸터-->
+    <footer id="footer">
+        <div class="footer_inner">
+
+            <div class="footer_top">
+                <!-- 왼쪽 로고/문구 -->
+                <div class="footer_brand">
+                    <h2 class="footer_logo"> <img src="/images/footerlogo.png" alt=""></h2>
+                    <p>
+                        Bringing the quiet rhythm of Busan’s sea <br>
+                        into your everyday rituals.
+                        <br><br>
+                        For your peaceful rest.
+
+                    </p>
+                </div>
+
+                <!-- 오른쪽 메뉴 -->
+                <div class="footer_menu_wrap">
+                    <div class="footer_menu">
+                        <h3>shop</h3>
+                        <ul>
+                            <li><a href="#">hair</a></li>
+                            <li><a href="#">body</a></li>
+                            <li><a href="#">bath</a></li>
+                            <li><a href="#">fragrance</a></li>
+                            <li><a href="#">refill</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer_menu">
+                        <h3>about</h3>
+                        <ul>
+                            <li><a href="#">brand</a></li>
+                            <li><a href="#">the forever tide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer_menu">
+                        <h3>socials</h3>
+                        <ul>
+                            <li><a href="mailto:hello@after051.com">email</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_bottom">
+                <p>©2026 After 051. All rights reserved</p>
+
+                <div class="footer_policy">
+                    <a href="#">Privacy &amp; Policy</a>
+                    <a href="#">Terms &amp; Condition</a>
+                </div>
+            </div>
+
+            <img src="./images/logo_bg.svg" alt="" class="footer_flower">
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!--스크립트-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/products.js"></script>
+</body>
+
+</html>
