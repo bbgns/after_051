@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>after 051 애프터 051</title>
+    <title>after051 애프터051</title>
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
@@ -39,36 +39,36 @@
                 <nav class="gnb">
                     <ul>
                         <li class="nav_item shop_item">
-                            <a href="./shop.html">shop</a>
+                            <a href="./products_list.html">shop</a>
 
                             <div class="shop_mega">
                                 <div class="shop_mega_inner">
-                                    <a href="./shop.html" class="mega_card">
+                                    <a href="./products_list.html?category=all" class="mega_card">
                                         <img src="./images/menu_all_product.jpeg" alt="">
                                         <span>shop all</span>
                                     </a>
 
-                                    <a href="./hair.html" class="mega_card">
+                                    <a href="products_list.html?category=hair" class="mega_card">
                                         <img src="./images/menu_hair_product.jpeg" alt="">
                                         <span>hair</span>
                                     </a>
 
-                                    <a href="./body.html" class="mega_card">
+                                    <a href="products_list.html?category=body" class="mega_card">
                                         <img src="./images/menu_body_product.jpeg" alt="">
                                         <span>body</span>
                                     </a>
 
-                                    <a href="./bath.html" class="mega_card">
+                                    <a href="products_list.html?category=bath" class="mega_card">
                                         <img src="./images/menu_bath_product.jpeg" alt="">
                                         <span>bath</span>
                                     </a>
 
-                                    <a href="./fragrance.html" class="mega_card">
+                                    <a href="products_list.html?category=fragrance" class="mega_card">
                                         <img src="./images/menu_fragrance_product.jpeg" alt="">
                                         <span>fragrance</span>
                                     </a>
 
-                                    <a href="./gift.html" class="mega_card">
+                                    <a href="products_list.html?category=gift" class="mega_card">
                                         <img src="./images/menu_gift_product.jpeg" alt="">
                                         <span>gift</span>
                                     </a>
@@ -76,6 +76,7 @@
                             </div>
                         </li>
 
+                        <li class="nav_item"><a href="products_list.html?category=best">best sellers</a></li>
                         <li class="nav_item"><a href="./brand.html">brand</a></li>
                         <li class="nav_item"><a href="./mood-note.html">mood note</a></li>
                         <li class="nav_item"><a href="./store.html">store</a></li>
@@ -114,7 +115,8 @@
                     born from Busan’s sea.
                 </h2>
                 <p class="about_desc">
-                    after051은 부산의 바다에서 시작된 헤어·바디 리추얼 브랜드입니다.
+                    after 051은 부산의 바다에서 시작된 헤어·바디·배스 브랜드입니다. <br>바다 위로 번지는 빛, 안개처럼 흐려지는 경계, 하루의 끝에 남는 고요함에서 우리의 감각은
+                    출발합니다.
                 </p>
             </div>
 
@@ -125,11 +127,11 @@
                     </div>
 
                     <div class="visual_slide">
-                        <img src="./images/about_us_pic3.jpeg" alt="부산의 바다와 도시의 흐릿한 풍경">
+                        <img src="./images/about_us_pic2.jpeg" alt="부산의 바다와 도시의 흐릿한 풍경">
                     </div>
 
                     <div class="visual_slide">
-                        <img src="./images/about_us2.png" alt="향과 식물성 재료를 표현한 이미지">
+                        <img src="./images/about_us_pic3 .jpeg" alt="향과 식물성 재료를 표현한 이미지">
                     </div>
 
                     <div class="visual_slide">
@@ -137,7 +139,7 @@
                     </div>
 
                     <div class="visual_slide">
-                        <img src="./images/about_pic5.jpeg" alt="일상의 리추얼을 표현한 이미지">
+                        <img src="./images/about_us_pic5.jpeg" alt="일상의 리추얼을 표현한 이미지">
                     </div>
 
                     <div class="visual_slide">
@@ -215,59 +217,6 @@
         </div>
     </footer>
 
-
-    <!-- 장바구니 어두운 배경 -->
-    <div class="cart_overlay"></div>
-
-    <!-- 장바구니 패널 -->
-    <aside class="cart_drawer">
-        <div class="cart_header">
-            <h2><img src="./images/logo.svg" alt=""></h2>
-            <button type="button" class="cart_close">×</button>
-        </div>
-
-        <!-- 비어있을 때 -->
-        <div class="cart_empty">
-            <p>장바구니가 비어있습니다.</p>
-            <div class="cart_flower"><img src="./images/logo_bg.svg" alt=""></div>
-        </div>
-
-        <!-- 상품이 있을 때 예시 -->
-        <!-- 나중에 상품 들어가면 cart_empty는 숨기고 이걸 보여주면 됨 -->
-        <div class="cart_content">
-            <div class="cart_item">
-                <div class="cart_img"></div>
-
-                <div class="cart_info">
-                    <p class="cart_name">제품 이름</p>
-                    <p class="cart_price">제품 가격</p>
-
-                    <div class="cart_option">
-                        <span>수량</span>
-                        <button type="button">-</button>
-                        <span>1</span>
-                        <button type="button">+</button>
-                    </div>
-                </div>
-
-                <button type="button" class="cart_delete">삭제</button>
-            </div>
-        </div>
-
-        <div class="cart_bottom">
-            <div class="cart_total">
-                <span>주문 금액</span>
-                <strong>nn,nnn 원</strong>
-            </div>
-
-            <div class="cart_buttons">
-                <button type="button">선물하기</button>
-                <button type="button">바로 구매하기</button>
-            </div>
-
-            <p class="cart_notice">주문 금액 nn,nnn 이상 일시 무료 증정!</p>
-        </div>
-    </aside>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
             video: "./video/Water_ripples_with_floating_petals_202606251200.mp4",
 
             hair: [
-                { name: "해무 샴푸", img: "./images/haemu_shampoo.png" },
-                { name: "해무 트리트먼트", img: "./images/haemu_hairpack.png" },
-                { name: "해무 세럼", img: "./images/haemu_hair_serum.png" }
+                { name: "해무 샴푸", img: "./images/haemu_shampoo.jpg" },
+                { name: "해무 트리트먼트", img: "./images/haemu_hair_mask.jpg" },
+                { name: "해무 세럼", img: "./images/haemu_hair_serum.jpg" }
             ],
 
             body: [
-                { name: "해무 바디워시", img: "./images/haemu_body_wash.png" },
-                { name: "해무 바디로션", img: "./images/haemu_body_lotion.png" },
+                { name: "해무 바디워시", img: "./images/haemu_body_wash.jpg" },
+                { name: "해무 바디로션", img: "./images/haemu_body_lotion.jpg" },
                 { name: "해무 바디 바", img: "./images/haemu_body_bar.png" }
             ]
         },
@@ -52,15 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
             video: "./video/yunseul_video.mp4",
 
             hair: [
-                { name: "윤슬 샴푸", img: "./images/yunseul_shampoo.png" },
-                { name: "윤슬 헤어 컨디셔너", img: "./images/yunseul_hair_conditioner.png" },
-                { name: "윤슬 두피 스프레이", img: "./images/yunseul_scalp_spray.png" }
+                { name: "윤슬 샴푸", img: "./images/yunseul_shampoo.jpg" },
+                { name: "윤슬 헤어 컨디셔너", img: "./images/yunseul_hair_conditioner.jpg" },
+                { name: "윤슬 두피 스프레이", img: "./images/yunseul_scalp_spray.jpg" }
             ],
 
             body: [
                 { name: "윤슬 바디워시", img: "./images/yunseul_body_wash.png" },
                 { name: "윤슬 바디스크럽", img: "./images/yunseul_body_scrub.png" },
-                { name: "윤슬 바디미스트", img: "./images/yunseul_body_mist.png" }
+                { name: "윤슬 바디미스트", img: "./images/yunseul_body_mist.jpg" }
             ]
         },
 

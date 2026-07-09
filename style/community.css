@@ -1,0 +1,165 @@
+/* =========================
+    COMMUNITY PAGE
+========================= */
+
+#community_page {
+    min-height: 100vh;
+    background-color: #fff;
+    color: #111;
+    padding: 180px 40px 120px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.community_inner {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+/* 탭 */
+.community_tabs {
+    font-family: "EB Garamond", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 55px;
+}
+
+.community_tabs a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #111;
+    transition: opacity 0.3s ease;
+}
+
+.community_tabs a:hover {
+    opacity: 0.45;
+}
+
+.community_tabs a.active {
+    font-weight: 700;
+}
+
+/* 게시판 */
+.board_list {
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+}
+
+.board_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    padding: 20px 16px;
+    border-bottom: 1px solid #ddd;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.board_item:last-child {
+    border-bottom: none;
+}
+
+.board_item strong {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.board_meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+
+    font-size: 13px;
+    color: #777;
+}
+
+.board_item:hover strong {
+    text-decoration: underline;
+}
+
+.board_panel {
+    display: none;
+}
+
+.board_panel.active {
+    display: block;
+}
+
+.community_tabs a.active {
+    color: #111;
+    font-weight: 700;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 55px;
+}
+
+.pagination a {
+    font-size: 16px;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pagination a:hover {
+    color: #111;
+}
+
+.pagination a.active {
+    color: #111;
+    font-weight: 700;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    #community_page {
+        padding: 140px 20px 90px;
+    }
+
+    .community_tabs {
+        gap: 18px;
+        margin-bottom: 40px;
+    }
+
+    .community_tabs a {
+        font-size: 16px;
+    }
+
+    .board_item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 18px 4px;
+    }
+
+    .board_item strong {
+        width: 100%;
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .board_meta {
+        gap: 10px;
+        font-size: 12px;
+    }
+}

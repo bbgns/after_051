@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>after 051 애프터 051</title>
+    <title>after051 애프터051</title>
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
@@ -36,49 +36,49 @@
                 </h1>
 
                 <nav class="gnb">
-                    <ul>
-                        <li class="nav_item shop_item">
-                            <a href="./shop.html">shop</a>
+                    <li class="nav_item shop_item">
+                        <a href="./products_list.html">shop</a>
 
-                            <div class="shop_mega">
-                                <div class="shop_mega_inner">
-                                    <a href="./shop.html" class="mega_card">
-                                        <img src="./images/menu_all_product.jpeg" alt="">
-                                        <span>shop all</span>
-                                    </a>
+                        <div class="shop_mega">
+                            <div class="shop_mega_inner">
+                                <a href="./products_list.html?category=all" class="mega_card">
+                                    <img src="./images/menu_all_product.jpeg" alt="">
+                                    <span>shop all</span>
+                                </a>
 
-                                    <a href="./hair.html" class="mega_card">
-                                        <img src="./images/menu_hair_product.jpeg" alt="">
-                                        <span>hair</span>
-                                    </a>
+                                <a href="products_list.html?category=hair" class="mega_card">
+                                    <img src="./images/menu_hair_product.jpeg" alt="">
+                                    <span>hair</span>
+                                </a>
 
-                                    <a href="./body.html" class="mega_card">
-                                        <img src="./images/menu_body_product.jpeg" alt="">
-                                        <span>body</span>
-                                    </a>
+                                <a href="products_list.html?category=body" class="mega_card">
+                                    <img src="./images/menu_body_product.jpeg" alt="">
+                                    <span>body</span>
+                                </a>
 
-                                    <a href="./bath.html" class="mega_card">
-                                        <img src="./images/menu_bath_product.jpeg" alt="">
-                                        <span>bath</span>
-                                    </a>
+                                <a href="products_list.html?category=bath" class="mega_card">
+                                    <img src="./images/menu_bath_product.jpeg" alt="">
+                                    <span>bath</span>
+                                </a>
 
-                                    <a href="./fragrance.html" class="mega_card">
-                                        <img src="./images/menu_fragrance_product.jpeg" alt="">
-                                        <span>fragrance</span>
-                                    </a>
+                                <a href="products_list.html?category=fragrance" class="mega_card">
+                                    <img src="./images/menu_fragrance_product.jpeg" alt="">
+                                    <span>fragrance</span>
+                                </a>
 
-                                    <a href="./gift.html" class="mega_card">
-                                        <img src="./images/menu_gift_product.jpeg" alt="">
-                                        <span>gift</span>
-                                    </a>
-                                </div>
+                                <a href="products_list.html?category=gift" class="mega_card">
+                                    <img src="./images/menu_gift_product.jpeg" alt="">
+                                    <span>gift</span>
+                                </a>
                             </div>
-                        </li>
-
-                        <li class="nav_item"><a href="./brand.html">brand</a></li>
-                        <li class="nav_item"><a href="./mood-note.html">mood note</a></li>
-                        <li class="nav_item"><a href="./store.html">store</a></li>
-                        <li class="nav_item"><a href="./community.html">community</a></li>
+                        </div>
+                    </li>
+                    
+                    <li class="nav_item"><a href="products_list.html?category=best">best sellers</a></li>
+                    <li class="nav_item"><a href="./brand.html">brand</a></li>
+                    <li class="nav_item"><a href="./mood-note.html">mood note</a></li>
+                    <li class="nav_item"><a href="./store.html">store</a></li>
+                    <li class="nav_item"><a href="./community.html">community</a></li>
                     </ul>
                 </nav>
             </div>
@@ -110,7 +110,7 @@
         <section class="detail_top">
             <div class="detail_info">
                 <h2 class="detail_title">
-                    haemu / <em>foggy dawn</em><br>
+                    haemu / foggy dawn<br>
                     <span>— misty bath milk</span>
                 </h2>
 
@@ -171,54 +171,60 @@
 
         <!-- 탭 메뉴 -->
         <nav class="detail_tabs">
-            <button type="button" class="tab_btn active">about</button>
-            <button type="button" class="tab_btn">review</button>
-            <button type="button" class="tab_btn">details</button>
+            <button type="button" class="tab_btn active" data-tab="about">about</button>
+            <button type="button" class="tab_btn" data-tab="review">review</button>
+            <button type="button" class="tab_btn" data-tab="details">details</button>
         </nav>
 
-
         <!-- about 영역 -->
-        <section id="about_section">
+        <!-- about 영역 -->
+        <section id="about_section" class="tab_panel active" data-panel="about">
             <div class="about_inner">
 
-                <!-- 왼쪽 텍스트 -->
-                <div class="about_text">
-                    <h3>
-                        about<br>
-                        haemu bath milk
-                    </h3>
+                <!-- 위쪽 영역: 텍스트 + 메인 이미지 -->
+                <div class="about_top">
 
-                    <p class="about_sub">
-                        a quiet bath ritual, wrapped in sea mist.
-                    </p>
+                    <!-- 왼쪽 텍스트 -->
+                    <div class="about_text">
+                        <h3>
+                            about<br>
+                            haemu bath milk
+                        </h3>
 
-                    <p class="about_desc">
-                        해무가 서서히 걷히는 부산의 새벽 바다.<br>
-                        그 차분한 고요함을 담아, 따뜻한 물에 부드럽게 퍼지는
-                        밀키한 배스 밀크로 일상의 긴장을 천천히 녹여주세요.
-                    </p>
+                        <p class="about_sub">
+                            a quiet bath ritual, wrapped in sea mist.
+                        </p>
 
-                    <div class="about_howto">
-                        <h4>how to use</h4>
+                        <p class="about_desc">
+                            해무가 서서히 걷히는 부산의 새벽 바다.<br>
+                            그 차분한 고요함을 담아, 따뜻한 물에 부드럽게 퍼지는
+                            밀키한 배스 밀크로 일상의 긴장을 천천히 녹여주세요.
+                        </p>
 
-                        <ol>
-                            <li>욕조에 따뜻한 물을 받은 뒤, 적당량을 풀어주세요.</li>
-                            <li>우윳빛 배스 밀크가 고르게 퍼지도록 가볍게 섞어주세요.</li>
-                            <li>향과 온기에 몸을 맡기고 10–15분간 편안하게 입욕하세요.</li>
-                        </ol>
+                        <div class="about_howto">
+                            <h4>how to use</h4>
+
+                            <ol>
+                                <li>욕조에 따뜻한 물을 받은 뒤, 적당량을 풀어주세요.</li>
+                                <li>우윳빛 배스 밀크가 고르게 퍼지도록 가볍게 섞어주세요.</li>
+                                <li>향과 온기에 몸을 맡기고 10–15분간 편안하게 입욕하세요.</li>
+                            </ol>
+                        </div>
                     </div>
+
+                    <!-- 오른쪽 메인 이미지 -->
+                    <div class="about_visual">
+                        <img src="./images/haemu_about_bath.jpeg" alt="milky bath with camellia petals">
+                        <figcaption>
+                            *본 이미지는 연출된 이미지로 실제 제품의 색상, 제형 및 사용감에 다소 차이가 있을 수 있습니다.
+                        </figcaption>
+                    </div>
+
                 </div>
 
-                <!-- 가운데 메인 이미지 -->
-                <div class="about_visual">
-                    <img src="./images/haemu_about_bath.jpeg" alt="milky bath with camellia petals">
-                    <figcaption>
-                        *본 이미지는 연출된 이미지로 실제 제품의 색상, 제형 및 사용감에 다소 차이가 있을 수 있습니다.
-                    </figcaption>
-                </div>
 
-                <!-- 오른쪽 정보 영역 -->
-                <div class="about_side">
+                <!-- 아래쪽 영역: key point + key mood -->
+                <div class="about_bottom">
 
                     <!-- key point 3개 -->
                     <div class="benefit_list">
@@ -244,7 +250,7 @@
                             <div class="benefit_txt">
                                 <h4>soft floral calm</h4>
                                 <p>
-                                    동백과 화이트 로즈의 은은한 플로럴 향이
+                                    동백과 화이트 로즈의 은은한 플로럴 향이<br>
                                     마음을 차분하게 가라앉혀 줍니다.
                                 </p>
                             </div>
@@ -297,6 +303,103 @@
             </div>
         </section>
 
+        <!--리뷰섹션-->
+        <section id="review_section" class="tab_panel" data-panel="review">
+            <div class="review_inner">
+                <h3>review</h3>
+
+                <div class="review_list">
+                    <div class="review_item">
+                        <p class="review_star">★★★★★</p>
+                        <p class="review_name">반신욕에 강추</p>
+                        <p class="review_text">
+                            물에 넣는 순간 우윳빛으로 변하는 게 예쁘고, 향이 과하지 않아서 반신욕 할 때 좋았어요.
+                        </p>
+                        <p class="review_meta">guest · 2026.07.08</p>
+                    </div>
+
+                    <div class="review_item">
+                        <p class="review_star">★★★★★</p>
+                        <p class="review_name">피부가 부드러워져요</p>
+                        <p class="review_text">
+                            동백이랑 코코넛 밀크 향이 은은해서 좋았고 목욕 후에도 피부가 건조해지지 않고 촉촉해져서 너무 좋아요. 재구매 의사 있음
+                        </p>
+                        <p class="review_meta">guest · 2026.07.06</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- details 영역 -->
+        <section id="details_section" class="tab_panel" data-panel="details">
+            <div class="details_inner">
+                <h3>details</h3>
+
+                <div class="details_info">
+                    <dl>
+                        <dt>제품명</dt>
+                        <dd>해무 배스 밀크 / haemu bath milk</dd>
+
+                        <dt>용량</dt>
+                        <dd>500ml</dd>
+
+                        <dt>향</dt>
+                        <dd>동백, 코코넛 밀크, 로즈마리, 유칼립투스가 어우러진 부드러운 플로럴 머스크 향</dd>
+
+                        <dt>주요 성분</dt>
+                        <dd>
+                            정제수, 동백나무씨오일, 코코넛 밀크, 로즈마리잎오일,
+                            유칼립투스잎오일, 글리세린, 카프릴릭/카프릭트라이글리세라이드,
+                            폴리솔베이트60, 1,2-헥산다이올
+                        </dd>
+
+                        <dt>성분 설명</dt>
+                        <dd>
+                            동백나무씨오일과 코코넛 밀크가 목욕 후 피부를 부드럽고 편안하게 감싸주며,
+                            로즈마리잎오일과 유칼립투스잎오일이 산뜻하고 차분한 입욕 분위기를 더해줍니다.
+                            글리세린과 식물성 보습 성분이 목욕 후에도 건조함을 덜어주는 데 도움을 줍니다.
+                        </dd>
+
+                        <dt>사용 방법</dt>
+                        <dd>
+                            욕조에 따뜻한 물을 받은 뒤 적당량을 넣고 충분히 풀어주세요.
+                            우윳빛 배스 밀크가 물에 고르게 퍼지면 10–15분간 편안하게 입욕한 후,
+                            필요에 따라 가볍게 헹구어 마무리합니다.
+                        </dd>
+
+                        <dt>사용 시 주의사항</dt>
+                        <dd>
+                            사용 중 붉은 반점, 부어오름, 가려움증 등의 이상 증상이 나타날 경우 사용을 중지하고 전문의와 상담하세요.
+                            상처가 있는 부위에는 사용을 피해주세요. 눈에 들어갔을 경우 즉시 깨끗한 물로 씻어내세요.
+                            사용 후에는 반드시 마개를 닫아 보관하고, 직사광선 및 고온다습한 곳을 피해 보관해주세요.
+                            영유아의 손이 닿지 않는 곳에 보관해주세요.
+                        </dd>
+
+                        <dt>제품 정보</dt>
+                        <dd>
+                            제품 유형: 입욕용 배스 밀크<br>
+                            피부 타입: 모든 피부 타입<br>
+                            사용 기한: 개봉 후 12개월 이내 사용 권장<br>
+                            보관 방법: 직사광선을 피해 서늘하고 건조한 곳에 보관
+                        </dd>
+
+                        <dt>소비자 상담실</dt>
+                        <dd>
+                            0000-0510<br>
+                            운영 시간: 평일 10:00–17:30 / 점심시간 12:00–13:00
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="details_notice">
+                    <h4>notice</h4>
+                    <p>
+                        본 제품은 포트폴리오용 가상 브랜드 제품입니다. 제품명, 성분, 용량 및 소비자 상담실 정보는
+                        브랜드 콘셉트 표현을 위해 구성된 예시이며, 실제 사실과 다를 수 있음을 명시합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 
 
@@ -371,6 +474,7 @@
 
     <!--js파일-->
     <script src="./js/common.js"></script>
+    <script src="./js/detail.js"></script>
 </body>
 
 </html>

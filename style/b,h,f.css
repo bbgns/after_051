@@ -11,7 +11,7 @@
 }
 
 * {
-    cursor: url(/images/Group\ 3645.png) 12 12, auto;
+    cursor: url(/images/mouse_cursor.svg) 10 10, auto;
 }
 
 a,
@@ -303,7 +303,7 @@ button {
 /* 아스키 배너 */
 #ascii_banner {
     padding: 70px 40px;
-    text-align: center;
+    align-items: center;
 }
 
 #ascii_banner img {
