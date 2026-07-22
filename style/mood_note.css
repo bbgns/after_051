@@ -1,6 +1,6 @@
 /* bath page common */
 #bath_page {
-    background-color: #fbfaf4;
+    background-color: var(--full_bg_color);
     color: #111;
     padding-top: 50px;
 }
@@ -105,9 +105,10 @@
 
 /* detail swiper */
 .bath_detail_section {
+    width: 100%;
     max-width: 1680px;
-    margin: auto;
-    padding: 110px 50px 110px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
     overflow: hidden;
 }
 
@@ -148,13 +149,6 @@
 
 .intro_right {
     text-align: right;
-}
-
-/* bath detail swiper */
-.bath_detail_section {
-    width: 100%;
-    padding: 60px 40px;
-    overflow: hidden;
 }
 
 .bathDetailSwiper {
@@ -372,38 +366,67 @@
     cursor: default;
 }
 
-/* 반응형 */
 @media (max-width: 900px) {
-    .bath_detail_section {
-        padding: 24px 20px 48px;
+    .bath_visual {
+        height: 620px;
     }
 
-    .bath_slide {
-        min-height: auto;
+    .bath_visual_text {
+        left: 24px;
+        top: 60px;
+        width: calc(100% - 48px);
+    }
+
+    .visual_label {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .bath_collection_title {
+        align-items: flex-end;
+        margin-bottom: 30px;
+    }
+
+    .bath_collection_title h2 {
+        font-size: clamp(42px, 10vw, 58px);
+    }
+
+    .visual_desc {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .bath_visual_img {
+        object-position: center;
+    }
+
+    .bath_detail_section {
+        padding: 60px 20px 80px;
     }
 
     .bath_layout,
     .bath_layout_left,
     .bath_layout_right {
         grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .bath_layout_right .bath_product_group {
-        order: 2;
-    }
-
-    .bath_layout_right .bath_main_img {
-        order: 1;
-    }
-
-    .bath_main_img img,
-    .bath_layout_right .bath_main_img img {
-        height: 320px;
+        gap: 32px;
     }
 
     .bath_product {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #bath_page .bath_product .product_bottom_img {
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .product_text.right,
+    .intro_right {
+        text-align: left;
     }
 
     .bath_title_line h3 {
@@ -411,7 +434,7 @@
     }
 
     .bath_nav {
-        right: 20px;
+        right: 0;
         bottom: 8px;
     }
 }

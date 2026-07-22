@@ -18,7 +18,7 @@
 
 
     <!--스타일-->
-    <link rel="stylesheet" href="./style/bath_collection.css">
+    <link rel="stylesheet" href="./style/mood_note.css">
     <link rel="stylesheet" href="./style/b,h,f.css">
     <!--파비콘-->
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
@@ -76,30 +76,25 @@
                         </li>
 
                         <li class="nav_item"><a href="products_list.html?category=best">best sellers</a></li>
-                        <li class="nav_item"><a href="./brand.html">brand</a></li>
-                        <li class="nav_item"><a href="./mood-note.html">mood note</a></li>
-                        <li class="nav_item"><a href="./store.html">store</a></li>
+                        <li class="nav_item"><a href="./about_us.html">brand</a></li>
+                        <li class="nav_item"><a href="./mood_note.html">mood note</a></li>
+                        <li class="nav_item"><a href="./products_list.html">store</a></li>
                         <li class="nav_item"><a href="./community.html">community</a></li>
                     </ul>
                 </nav>
             </div>
             <ul class="header_icons">
                 <li>
-                    <a href="./search.html" aria-label="search">
-                        <img src="./images/material-symbols-light_search.svg" alt="">
-                    </a>
+                    <a href="./search.html">search</a>
                 </li>
 
                 <li>
-                    <a href="./login.html" aria-label="account">
-                        <img src="./images/mdi-light_account.svg" alt="">
-                    </a>
+                    <a href="./login.html">account</a>
                 </li>
 
                 <li>
-                    <a href="#" class="cart_icon" aria-label="cart">
-                        <img src="./images/mdi-light_cart.svg" alt="">
-                        <span class="cart_count">0</span>
+                    <a href="#" class="cart_icon">
+                        bag <span class="cart_count">(0)</span>
                     </a>
                 </li>
             </ul>
@@ -385,7 +380,6 @@
                         <h3>about</h3>
                         <ul>
                             <li><a href="#">brand</a></li>
-                            <li><a href="#">the forever tide</a></li>
                         </ul>
                     </div>
 
@@ -413,64 +407,10 @@
         </div>
     </footer>
 
-
-    <!-- 장바구니 어두운 배경 -->
-    <div class="cart_overlay"></div>
-
-    <!-- 장바구니 패널 -->
-    <aside class="cart_drawer">
-        <div class="cart_header">
-            <h2><img src="./images/logo.svg" alt=""></h2>
-            <button type="button" class="cart_close">×</button>
-        </div>
-
-        <!-- 비어있을 때 -->
-        <div class="cart_empty">
-            <p>장바구니가 비어있습니다.</p>
-            <div class="cart_flower"><img src="./images/logo_bg.svg" alt=""></div>
-        </div>
-
-        <!-- 상품이 있을 때 예시 -->
-        <!-- 나중에 상품 들어가면 cart_empty는 숨기고 이걸 보여주면 됨 -->
-        <div class="cart_content">
-            <div class="cart_item">
-                <div class="cart_img"></div>
-
-                <div class="cart_info">
-                    <p class="cart_name">제품 이름</p>
-                    <p class="cart_price">제품 가격</p>
-
-                    <div class="cart_option">
-                        <span>수량</span>
-                        <button type="button">-</button>
-                        <span>1</span>
-                        <button type="button">+</button>
-                    </div>
-                </div>
-
-                <button type="button" class="cart_delete">삭제</button>
-            </div>
-        </div>
-
-        <div class="cart_bottom">
-            <div class="cart_total">
-                <span>주문 금액</span>
-                <strong>nn,nnn 원</strong>
-            </div>
-
-            <div class="cart_buttons">
-                <button type="button">선물하기</button>
-                <button type="button">바로 구매하기</button>
-            </div>
-
-            <p class="cart_notice">주문 금액 nn,nnn 이상 일시 무료 증정!</p>
-        </div>
-    </aside>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!--js파일-->
-    <script src="./js/bath.js"></script>
+    <script src="./js/mood_note.js"></script>
     <script src="./js/common.js"></script>
 </body>
 

@@ -1,45 +1,137 @@
-document.querySelectorAll(".filter_chips").forEach(function (chipGroup) {
-    const buttons = chipGroup.querySelectorAll("button");
+document.addEventListener("DOMContentLoaded", function () {
+    const categoryTabs = [
+        ...document.querySelectorAll(".category_tab")
+    ];
 
-    buttons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            buttons.forEach(function (btn) {
-                btn.classList.remove("is_active");
-            });
+    const productSections = [
+        ...document.querySelectorAll(".product_section")
+    ];
 
-            button.classList.add("is_active");
+    if (!categoryTabs.length || !productSections.length) {
+        return;
+    }
+
+    const validCategories = categoryTabs.map(function (tab) {
+        return tab.dataset.category;
+    });
+
+    function getSafeCategory(category) {
+        return validCategories.includes(category)
+            ? category
+            : "all";
+    }
+
+    function showProductCategory(category) {
+        const safeCategory = getSafeCategory(category);
+
+        categoryTabs.forEach(function (tab) {
+            const isActive =
+                tab.dataset.category === safeCategory;
+
+            tab.classList.toggle("is_active", isActive);
+            tab.setAttribute(
+                "aria-pressed",
+                String(isActive)
+            );
+        });
+
+        productSections.forEach(function (section) {
+            const sectionCategory =
+                section.dataset.category;
+
+            /*
+             * 전체 상품에서는 best를 제외한다.
+             * best 상품은 다른 카테고리 상품과 중복되기 때문.
+             */
+            const isVisible =
+                safeCategory === "all"
+                    ? sectionCategory !== "best"
+                    : sectionCategory === safeCategory;
+
+            section.classList.toggle(
+                "is_active",
+                isVisible
+            );
+        });
+
+        return safeCategory;
+    }
+
+    function updateCategoryURL(category, push = true) {
+        const url = new URL(window.location.href);
+
+        url.searchParams.set("category", category);
+
+        if (push) {
+            history.pushState(
+                { category: category },
+                "",
+                url
+            );
+        } else {
+            history.replaceState(
+                { category: category },
+                "",
+                url
+            );
+        }
+    }
+
+    categoryTabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            const category = showProductCategory(
+                tab.dataset.category
+            );
+
+            updateCategoryURL(category);
         });
     });
-});
 
-const categoryTabs = document.querySelectorAll(".category_tab");
-const productSections = document.querySelectorAll(".product_section");
+    /* 브라우저 뒤로 가기 대응 */
+    window.addEventListener("popstate", function () {
+        const params = new URLSearchParams(
+            window.location.search
+        );
 
-function showProductCategory(category) {
-    categoryTabs.forEach((tab) => {
-        tab.classList.toggle("is_active", tab.dataset.category === category);
+        showProductCategory(
+            params.get("category") || "all"
+        );
     });
 
-    productSections.forEach((section) => {
-        const sectionCategory = section.dataset.category;
+    /* 라인 버튼 선택 표시 */
+    document.querySelectorAll(".filter_chips").forEach(
+        function (chipGroup) {
+            const buttons = [
+                ...chipGroup.querySelectorAll("button")
+            ];
 
-        if (category === "all") {
-            section.classList.toggle("is_active", sectionCategory !== "best");
-        } else {
-            section.classList.toggle("is_active", sectionCategory === category);
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    buttons.forEach(function (btn) {
+                        btn.classList.remove("is_active");
+                        btn.setAttribute(
+                            "aria-pressed",
+                            "false"
+                        );
+                    });
+
+                    button.classList.add("is_active");
+                    button.setAttribute(
+                        "aria-pressed",
+                        "true"
+                    );
+                });
+            });
         }
-    });
-}
+    );
 
-categoryTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-        const category = tab.dataset.category;
-        showProductCategory(category);
-        history.pushState(null, "", `?category=${category}`);
-    });
+    const initialParams = new URLSearchParams(
+        window.location.search
+    );
+
+    const initialCategory = showProductCategory(
+        initialParams.get("category") || "all"
+    );
+
+    updateCategoryURL(initialCategory, false);
 });
-
-const params = new URLSearchParams(window.location.search);
-const initialCategory = params.get("category") || "all";
-
-showProductCategory(initialCategory);

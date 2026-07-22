@@ -3,17 +3,13 @@
 ========================= */
 
 #products_page {
-    background-color: #fbfaf4;
+    background-color: var(--full_bg_color);
     color: #111;
     padding: 120px 80px 100px;
     /*패딩 순서: 상 좌우 하*/
 }
 
 /* 섹션 공통 */
-.product_section {
-    margin-bottom: 100px;
-}
-
 .section_title {
     display: flex;
     align-items: center;
@@ -139,10 +135,41 @@
     letter-spacing: 0.04em;
 }
 
+.filter_chips button {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.filter_chips button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+    background: #111;
+
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+.filter_chips button:hover::after,
+.filter_chips button.is_active::after {
+    width: 100%;
+}
+
+.filter_chips button.is_active {
+    font-weight: 700;
+    opacity: 1;
+}
+
 .filter_desc {
     flex-basis: 100%;
-    margin-top: 20x;
+    margin-top: 20px;
     color: #333;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
 .product_grid {
@@ -222,17 +249,28 @@
     gap: 6px;
 }
 
-.product_btns a {
+.product_btns a,
+.product_btns button {
     display: block;
     width: 100%;
     padding: 8px 10px;
+
     border: 1px solid #d8d4c8;
+    background: transparent;
+    color: #111;
+
     text-align: center;
     font-size: 12px;
-    transition: all 0.25s ease;
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
-.product_btns a:hover {
+.product_btns a:hover,
+.product_btns button:hover {
     border-color: #111;
     background-color: #111;
     color: #fbfaf4;
@@ -294,40 +332,88 @@
     display: block;
 }
 
-/* 반응형 */
+/* =========================
+    PRODUCTS RESPONSIVE
+========================= */
+
 @media (max-width: 1200px) {
     #products_page {
-        padding: 70px 40px 100px;
+        /* 고정 헤더 60px + 위쪽 여백 */
+        padding: 100px 40px 100px;
     }
 
+    .product_grid,
     .product_layout_hair,
-    .product_layout_body {
-        grid-template-columns: repeat(2, 1fr);
+    .product_layout_body,
+    .product_layout_gift {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .product_layout_bath,
     .product_layout_fragrance {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 768px) {
     #products_page {
-        padding: 50px 20px 80px;
+        padding: 90px 20px 80px;
     }
 
-    .products_intro h2 {
-        font-size: 42px;
+    .product_category_tabs {
+        justify-content: flex-start;
+        gap: 28px;
+
+        width: 100%;
+        padding-bottom: 12px;
+        overflow-x: auto;
+
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .product_category_tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category_tab {
+        flex-shrink: 0;
     }
 
     .section_title h3 {
         font-size: 34px;
     }
 
+    .section_title .title_line {
+        height: 1px;
+    }
+
     .section_banner {
-        height: 160px;
+        height: 180px;
         margin-bottom: 40px;
+    }
+
+    .filter_area {
+        margin: 30px 0;
+        font-size: 15px;
+    }
+
+    .filter_chips {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .filter_chips::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter_chips li {
+        flex-shrink: 0;
     }
 
     .product_layout_hair,
@@ -337,13 +423,26 @@
         grid-template-columns: 1fr;
     }
 
-    .visual_card {
-        order: -1;
+    .product_grid,
+    .product_layout_gift {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 12px;
     }
 
-    .visual_card img,
-    .visual_card_tall img,
-    .visual_card_wide img {
+    .visual_card {
+        order: -1;
         min-height: 360px;
+    }
+
+    .visual_card img {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .product_grid,
+    .product_layout_gift {
+        grid-template-columns: 1fr;
     }
 }

@@ -2,7 +2,7 @@
 @charset "utf-8";
 
 :root {
-    --full_bg_color: #fbfaf4;
+    --full_bg_color: #FBFAF4;
     --main_font_color: #111;
     --sub_font_color: #5A5A5A;
     --sub_font_color2: #fff;
@@ -56,19 +56,38 @@ button {
 
 /* HEADER */
 
-/* HEADER */
-
 #header {
     font-family: "EB Garamond", "Noto Sans KR", sans-serif;
     width: 100%;
     height: 60px;
-    background: #fff;
-    border-bottom: 1px solid #111;
+
+    /* 처음에는 투명 */
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    color: #fff;
 
     position: fixed;
     left: 0;
     top: 0;
     z-index: 999;
+
+    transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease;
+}
+
+/* 배너를 지나가면 common.js가 active를 붙임 */
+#header.active,
+#header:hover,
+#header:focus-within {
+    background: #fff;
+    border-bottom-color: #111;
+    color: #111;
+}
+
+#header:not(.active):not(:hover):not(:focus-within) .logo img {
+    filter: brightness(0) invert(1);
 }
 
 .header_inner {
@@ -124,7 +143,10 @@ button {
     text-align: center;
     font-size: 20px;
     font-weight: 600;
-    color: #111;
+
+    /* 헤더 상태에 따라 흰색 또는 검은색 상속 */
+    color: inherit;
+
     letter-spacing: -0.03em;
     text-decoration: none;
 
@@ -146,12 +168,12 @@ button {
 
     width: 0;
     height: 1px;
-    background: #111;
 
     transition: width 0.3s ease;
 }
 
-.nav_item:hover>a::after {
+.nav_item:hover>a::after,
+.nav_item:focus-within>a::after {
     width: 100%;
 }
 
@@ -177,7 +199,8 @@ button {
     transition: 0.35s ease;
 }
 
-.shop_item:hover .shop_mega {
+.shop_item:hover .shop_mega,
+.shop_item:focus-within .shop_mega {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -225,14 +248,12 @@ button {
     opacity: 0.85;
 }
 
-/* =========================
-    RIGHT ICONS
-========================= */
+/*RIGHT TEXT MENU*/
 
 .header_icons {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
 
     margin: 0;
     padding: 0;
@@ -241,34 +262,49 @@ button {
 
 .header_icons a {
     position: relative;
-
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-}
-
-.header_icons img {
-    width: 26px;
-    height: 26px;
-
     display: block;
-    object-fit: contain;
+
+    color: inherit;
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
 
     transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+        letter-spacing 0.35s ease,
+        opacity 0.35s ease;
 }
 
-.header_icons a:hover img {
-    transform: translateY(-2px);
-    opacity: 0.6;
+.header_icons a:hover {
+    letter-spacing: 0.05em;
+    opacity: 0.65;
 }
 
+.header_icons a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+
+    width: 0;
+    height: 1px;
+    background: currentColor;
+
+    transition: width 0.3s ease;
+}
+
+.header_icons a:hover::after,
+.header_icons a:focus-visible::after {
+    width: 100%;
+}
+
+.cart_count {
+    margin-left: 3px;
+    font-size: 14px;
+    font-weight: 500;
+}
 
 
 /*꽃 svg 애니메이션*/

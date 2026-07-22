@@ -1,54 +1,117 @@
+/* =========================
+    STORE PAGE
+========================= */
+
 #store_page {
-    background-color: #fbfaf4;
+    padding-top: 60px;
+    background-color: var(--full_bg_color);
     color: #111;
 }
 
+/* MAP */
 .store_map_visual {
     width: 100%;
-    height: 800px;
+    height: clamp(500px, 72vh, 800px);
+    margin: 0;
     overflow: hidden;
+
     background-color: #eee;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.18);
 }
 
 .store_map_visual img {
+    display: block;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
-    display: block;
+    object-position: center;
 }
 
+/* STORE INFORMATION */
 .store_info {
-    padding: 90px 20px 140px;
+    width: min(calc(100% - 40px), 900px);
+    margin: 0 auto;
+    padding: clamp(80px, 9vw, 140px) 0;
+
     text-align: center;
 }
 
 .store_label {
-    font-family: "EB Garamond", serif;
-    font-size: 25px;
-    letter-spacing: 0.1em;
     margin-bottom: 18px;
+
+    font-family: "EB Garamond", serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #777;
 }
 
 .store_info h2 {
+    margin-bottom: 38px;
+
     font-family: "EB Garamond", serif;
-    font-size: 60px;
+    font-size: clamp(48px, 5vw, 72px);
     font-weight: 400;
+    line-height: 1;
     letter-spacing: 0.03em;
-    margin-bottom: 34px;
+}
+
+.store_details {
+    display: grid;
+    gap: 8px;
 }
 
 .store_address,
 .store_tel,
 .store_hours {
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 20px;
+    font-size: clamp(15px, 1.2vw, 18px);
+    font-weight: 400;
     line-height: 1.8;
+    letter-spacing: 0.01em;
 }
 
 .store_notice {
+    margin-top: 34px;
+
     font-family: "Noto Sans KR", sans-serif;
-    margin-top: 30px;
     font-size: 12px;
+    line-height: 1.7;
+
     color: #777;
-    line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+    .store_map_visual {
+        height: 500px;
+    }
+
+    .store_map_visual img {
+        object-position: center;
+    }
+
+    .store_info {
+        width: calc(100% - 40px);
+        padding: 72px 0 90px;
+    }
+
+    .store_info h2 {
+        margin-bottom: 30px;
+        font-size: 46px;
+    }
+
+    .store_address,
+    .store_tel,
+    .store_hours {
+        font-size: 14px;
+    }
+
+    .store_notice {
+        margin-top: 28px;
+        font-size: 11px;
+    }
 }

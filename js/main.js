@@ -19,6 +19,89 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    /* =========================
+    MAIN BANNER
+========================= */
+
+    const bannerElement = document.querySelector(".mainbanner");
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (bannerElement) {
+        const bannerSlides = bannerElement.querySelectorAll(
+            ".video_slide"
+        );
+
+        function stopBannerVideo(slide) {
+            const video = slide.querySelector(".mb_video");
+
+            slide.classList.remove("is_video_playing");
+
+            if (!video) return;
+
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function playBannerVideo(slide) {
+            const video = slide.querySelector(".mb_video");
+
+            if (
+                !video ||
+                reduceMotion ||
+                !slide.classList.contains("swiper-slide-active")
+            ) {
+                return;
+            }
+
+            video.play()
+                .then(() => {
+                    slide.classList.add("is_video_playing");
+                })
+                .catch(() => { });
+        }
+
+        const mainBannerSwiper = new Swiper(bannerElement, {
+            speed: 900,
+            rewind: true,
+
+            navigation: {
+                nextEl: ".mb_next",
+                prevEl: ".mb_prev"
+            },
+
+            keyboard: {
+                enabled: true
+            },
+
+            a11y: {
+                enabled: true,
+                prevSlideMessage: "이전 배너",
+                nextSlideMessage: "다음 배너"
+            },
+
+            on: {
+                slideChangeTransitionStart() {
+                    bannerSlides.forEach(stopBannerVideo);
+                }
+            }
+        });
+
+        /* 호버가 가능한 PC에서만 영상 전환 */
+        if (window.matchMedia("(hover: hover)").matches) {
+            bannerSlides.forEach(slide => {
+                slide.addEventListener("mouseenter", () => {
+                    playBannerVideo(slide);
+                });
+
+                slide.addEventListener("mouseleave", () => {
+                    stopBannerVideo(slide);
+                });
+            });
+        }
+    }
+
 
     /* =========================
         CHOOSE YOUR TIDE
